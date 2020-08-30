@@ -46,7 +46,7 @@ class 'Gamemode' {
   end,
 }
 
-class 'RaceGamemode (Gamemode) {
+class 'RaceGamemode' (Gamemode) {
   constructor = function(self)
     self.vehicles = {};
     self.checkpoints = {};
