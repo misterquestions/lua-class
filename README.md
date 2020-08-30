@@ -117,3 +117,41 @@ include 'deathmatch.lua'
 g_Deathmatch = Deathmatch { randomMaps = true, maxPlayers = 16, pingLimit = 280 };
 g_Race = RaceGamemode();
 ```
+
+## Partial classes
+Isn't a great practice at all but sometimes you may want to keep a specific-purpose class with its related topic on a file. Lets supose you have a class for x functionality and it has an "Utils" class, you may want to keep that part of the code on the same file, also you have another class for Utils for your y functionality. In Lua the reasonable behaviour would be to overwrite existing class for the one of y functionality. Using this library you'll be able to have both and they'll be merged into a single class; Example:
+
+```Lua
+-- file mapmanager.lua
+class 'MapManager' {
+  -- ...
+}
+
+class 'Utils' {
+  getFileHash = function(path)
+    -- ...
+  end,
+}
+
+-- file scriptloader.lua
+class 'ScriptLoader' {
+  -- ...
+}
+
+class 'Utils' {
+  generateEmptyEnvironment = function(self)
+    -- ...
+  end,
+}
+
+-- Ending Utils class
+class 'Utils' {
+  getFileHash = function(path)
+    -- ...
+  end,
+  
+  generateEmptyEnvironment = function(self)
+    -- ...
+  end,
+}
+```
