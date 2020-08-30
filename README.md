@@ -1,9 +1,8 @@
 # Lua class
-A library to add support for OOP on Lua with a really nice and elegant style
+A library to add support for OOP on Lua with a really nice and elegant style. This was created and tested by me on a personal project in a videogame called "Multi Theft Auto", however it may be useful for someone else someday, as it should work anywhere with Lua <3, if you like it feel free to give it a star and follow me please.
 
 ## How to use?
-Just download the include.lua file and include it to your project, it will work in any project that uses lua. This has been tested on "Multi Theft Auto" with Lua 5.1.
-
+Just download the include.lua file and include it to your project, it will work in any project that uses lua. This library was designed and tested on Lua 5.1
 * Note: For Lua 5.3 you'll have to change `unpack` function for `table.unpack`.
 
 ## Create your first class
