@@ -91,6 +91,10 @@ class 'TeamGamemode' {
 }
 
 class 'Deathmatch' (Gamemode, TeamGamemode) {
+  constructor = function(self, arguments)
+    self.settings = arguments;
+  end,
+
   onPlayerJoin = function(self, player)
     self:assignPlayerTeam(player);
     self:checkGameState();
@@ -102,4 +106,14 @@ class 'Deathmatch' (Gamemode, TeamGamemode) {
     end
   end,
 }
+```
+
+## Creating objects/instances
+Just call your class name like a normal function and you're ready to go!
+
+```Lua
+include 'deathmatch.lua'
+
+g_Deathmatch = Deathmatch { randomMaps = true, maxPlayers = 16, pingLimit = 280 };
+g_Race = RaceGamemode();
 ```
