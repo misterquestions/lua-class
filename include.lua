@@ -273,6 +273,8 @@ end
 function typeof(value)
   if isinstance(value) then
     value = classof(value)
+  else
+    value = type(value)
   end
 
   return tostring(value)
