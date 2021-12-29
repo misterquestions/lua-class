@@ -97,7 +97,6 @@ local function registerClass(name, superClasses, definition)
       object,
       {
         __class = definition,
-        __unm = definition.__unm,
         __add = definition.__add,
         __sub = definition.__sub,
         __mul = definition.__mul,
@@ -212,6 +211,8 @@ local function table_reverse(source)
 
   return result
 end
+
+local unpack = unpack or table.unpack
 
 function recursiveCall(object, method, ...)
   local reversed = false
