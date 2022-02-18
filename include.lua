@@ -144,7 +144,7 @@ local function registerClass(name, superClasses, definition)
     )
 
     -- Call constructor(s)
-    recursiveCall(object, "constructor")
+    recursiveCall(object, "constructor", ...)
 
     -- Disable constructor
     rawset(object, "constructor", false)
